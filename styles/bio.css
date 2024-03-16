@@ -232,6 +232,7 @@ body {
 @media (min-width: 768px) {
   .main-section__subquote {
     margin: 0 2.4rem;
+    font-size: 1rem;
   }
 }
 @media (min-width: 1280px) {
@@ -287,11 +288,13 @@ body {
     line-height: 1.375rem;
     width: 44%;
     font-size: 0.875rem;
+    font-weight: 600;
   }
 }
 @media (min-width: 1280px) {
   .main-section__article {
     width: 43%;
+    font-weight: 600;
   }
 }
 

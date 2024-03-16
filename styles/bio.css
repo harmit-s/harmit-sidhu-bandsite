@@ -43,7 +43,7 @@ body {
   padding: 0;
   margin: 0;
 }
-.header__item, .header a {
+.header__item, .header__item a {
   color: #FFFFFF;
   font-size: 0.875rem;
   font-family: "Avenir";
@@ -51,9 +51,10 @@ body {
   text-align: center;
   text-decoration: none;
 }
-.header__item:hover, .header a:hover {
+.header__item:hover, .header__item a:hover {
   color: #FFFFFF;
   border-bottom: 4px solid #FFFFFF;
+  padding-bottom: 0.75rem;
 }
 .header__item--current {
   padding-bottom: 0.75rem;
@@ -153,6 +154,53 @@ body {
   height: 10rem;
 }
 
-footer {
+.footer {
   padding-left: 1rem;
+  background: #323232;
+  width: 100%;
+  margin-top: 1rem;
+}
+.footer__layout {
+  display: flex;
+  flex-direction: column;
+}
+.footer__title {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  margin: 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  font-weight: 600;
+}
+.footer__icon-layout {
+  display: flex;
+  gap: 2rem;
+}
+.footer__subtitle {
+  font-size: 0.8125rem;
+  color: #FFFFFF;
+  padding: 1rem 0;
+  margin: 0;
+  line-height: 1.125rem;
+}
+.footer__text {
+  font-size: 0.8125rem;
+  color: #FFFFFF;
+  margin: 0;
+  line-height: 1.125rem;
+}
+.footer__text--email {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+.footer__logo {
+  width: 7.5rem;
+  margin-top: 3rem;
+  margin-bottom: 0.75rem;
+}
+.footer__copyright {
+  margin: 0;
+  font-size: 0.6875rem;
+  color: #FFFFFF;
+  margin-bottom: 1.5rem;
 }/*# sourceMappingURL=bio.css.map */

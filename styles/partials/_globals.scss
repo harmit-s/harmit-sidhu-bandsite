@@ -1,6 +1,17 @@
 @use './fonts' as *;
 @use './colors' as *;
 
+@mixin desktop {
+  @media (min-width: 1280px) {
+      @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+      @content;
+  }
+}
 
 
 *, *::after, *::before {
@@ -9,6 +20,218 @@
   
   body {
     margin: 0;
-    font-family: 'Avenir', sans-serif;
+    font-family: 'Avenir', sans-serif, open;
   }
 
+.header {
+    background: $black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+
+    @include tablet {
+        flex-direction: row;
+        padding-left: 2.25rem;
+        padding-top: 1.75rem;
+    }
+
+    @include desktop {
+        padding-left: 6rem;
+        padding-top: 2.25rem;
+    }
+
+    &__logo {
+        width: 7.5rem;
+        padding-bottom: 1rem;
+
+        @include desktop {
+            padding-bottom: 1.88rem;
+        }
+    }
+
+    &__nav {
+        width: 100%;
+    }
+
+    &__list {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        @include tablet {
+            margin-left: 4rem;
+            gap: 4rem;
+        }
+    }
+
+    &__item,
+    &__item a {
+        color: $white;
+        font-size: .875rem;
+        font-family: 'Avenir';
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+
+        @include tablet {
+            width: auto;
+        }
+
+        &:hover {
+            color: $white;
+            border-bottom: 4px solid $white;
+            padding-bottom: 1.25rem;
+
+            @include desktop {
+                padding-bottom: 2.25rem;
+            }
+        }
+    }
+
+    &__item--current {
+        padding-bottom: 1.25rem;
+        border-bottom: 4px solid $white;
+        font-weight: bold;
+
+        @include desktop {
+            padding-bottom: 2.25rem;
+        }
+    }
+
+    &__item--inactive>a {
+        color: $mercury;
+    }
+}
+
+.footer {
+  padding-left: 1rem;
+  background: $black;
+  width: 100%;
+
+  @include tablet {
+      padding: 3rem 2.25rem 2.25rem 2.25rem;
+  }
+  @include desktop {
+      padding: 3rem 6rem;
+  }
+
+  &__layout {
+      display: flex;
+      flex-direction: column;
+
+      @include tablet {
+          display: initial;
+          position: relative;
+      }
+  }
+
+  &__layout-2 {
+      @include tablet {
+          display: flex;
+      }
+
+  }
+
+  &__title {
+      color: $white;
+      font-size: 1.5rem;
+      margin: 0;
+      padding-top: 1.5rem;
+      padding-bottom: 1rem;
+      font-weight: 600;
+
+      @include tablet {
+          padding-top: 0;
+          font-size: 2.25rem;
+      }
+  }
+
+  &__icon-layout {
+      display: flex;
+      gap: 1.85rem;
+
+      @include tablet {
+          padding-left: 4rem;
+      }
+  }
+
+  &__icon {
+      @include tablet {
+          width: 1.4rem;
+          height: 1.6rem;
+          margin-top: .4063rem;
+      }
+  }
+
+  &__info-layout {
+      @include tablet {
+          display: flex;
+          gap: 5rem;
+      }
+  }
+
+  &__subtitle {
+      font-size: .8125rem;
+      color: $white;
+      padding: 1rem 0;
+      margin: 0;
+      line-height: 1.125rem;
+
+      @include tablet {
+          font-size: .875rem;
+          line-height: 1.25rem;
+          padding: 2.25rem 0;
+      }
+  }
+
+  &__text {
+      font-size: .8125rem;
+      color: $white;
+      margin: 0;
+      line-height: 1.125rem;
+
+      @include tablet {
+          font-size: .875rem;
+          line-height: 1.25rem;
+      }
+
+      &--email {
+          padding-top: 1rem;
+          padding-bottom: .5rem;
+
+          @include tablet {
+              padding-top: 2.25rem;
+          }
+      }
+  }
+
+  &__logo {
+      width: 7.5rem;
+      margin-top: 3rem;
+      margin-bottom: .75rem;
+
+      @include tablet {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: 0;
+      }
+  }
+
+  &__copyright {
+      margin-top: 0;
+      font-size: .6875rem;
+      color: $white;
+      margin-bottom: 1.5rem;
+
+      @include tablet {
+          margin-bottom: 0;
+          font-size: .875rem;
+          line-height: 1.25rem;
+          margin-top: 2.25rem;
+      }
+  }
+}

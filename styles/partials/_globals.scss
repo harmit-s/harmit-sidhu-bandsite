@@ -1,2 +1,14 @@
 @use './fonts' as *;
 @use './colors' as *;
+
+
+
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Avenir', sans-serif;
+  }
+

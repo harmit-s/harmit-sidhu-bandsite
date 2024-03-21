@@ -1,17 +1,7 @@
 @use './partials/globals';
+@use './partials/mixins' as *;
 @import './partials/colors';
 
-@mixin desktop {
-    @media (min-width: 1280px) {
-        @content;
-    }
-}
-
-@mixin tablet {
-    @media (min-width: 768px) {
-        @content;
-    }
-}
 
 .hero-section {
     height: 10.5rem;
@@ -108,9 +98,10 @@
         color: $black;
         font-size: .875rem;
         line-height: 1.375rem;
-        font-family: 'Avenir-demi';
+        font-family: 'Avenir';
         margin-top: 1rem;
         margin-bottom: 0;
+        font-weight: 600;
 
         @include tablet {
             margin: 2.25rem 2.4rem 0.7rem 2.4rem;
@@ -128,9 +119,10 @@
         color: $black;
         font-size: .875rem;
         line-height: 1.375rem;
-        font-family: 'Avenir-demi';
+        font-family: 'Avenir';
         margin-top: .25rem;
         margin-bottom: 1.25rem;
+        font-weight: 600;
 
         @include tablet {
             margin: 0 2.4rem;
@@ -209,9 +201,11 @@
     &__title {
         font-size: 1.5rem;
         line-height: 2rem;
-        font-family: 'Avenir-demi';
+        font-family: 'Avenir';
         margin: 0;
         padding-bottom: .625rem;
+        color: $black;
+        font-weight: 600;
 
         @include tablet {
             padding-bottom: 1.25rem;
@@ -236,15 +230,12 @@
 
     &__img {
         width: 100%;
-        height: 10rem;
 
         @include tablet {
             width: 31%;
-            height: 7rem;
             margin-bottom: .33rem;
         }
         @include desktop {
-            height: 11rem;
             margin-bottom: 1rem;
         }
     }

@@ -1,17 +1,7 @@
 @use './fonts' as *;
 @use './colors' as *;
+@use './mixins' as *;
 
-@mixin desktop {
-  @media (min-width: 1280px) {
-      @content;
-  }
-}
-
-@mixin tablet {
-  @media (min-width: 768px) {
-      @content;
-  }
-}
 
 
 *, *::after, *::before {
@@ -69,7 +59,7 @@
 
     &__item,
     &__item a {
-        color: $white;
+        color: $mercury;
         font-size: .875rem;
         font-family: 'Avenir';
         width: 100%;
@@ -82,27 +72,43 @@
 
         &:hover {
             color: $white;
-            border-bottom: 4px solid $white;
+            border-bottom: 3px solid $white;
             padding-bottom: 1.25rem;
 
             @include desktop {
                 padding-bottom: 2.25rem;
             }
         }
-    }
 
-    &__item--current {
-        padding-bottom: 1.25rem;
-        border-bottom: 4px solid $white;
-        font-weight: bold;
+        &--current, &--current > a {
+            padding-bottom: 1.25rem;
+            border-bottom: 3px solid $white;
+            font-weight: bold;
+            color: $white;
+            font-size: .875rem;
+            font-family: 'Avenir';
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
 
-        @include desktop {
-            padding-bottom: 2.25rem;
+            @include tablet {
+                width: auto;
+            }
+    
+            @include desktop {
+                padding-bottom: 2.25rem;
+            }
+
+            &:hover {
+                color: $white;
+                border-bottom: 4px solid $white;
+                padding-bottom: 1.25rem;
+    
+                @include desktop {
+                    padding-bottom: 2.25rem;
+                }
+            }
         }
-    }
-
-    &__item--inactive>a {
-        color: $mercury;
     }
 }
 

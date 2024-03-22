@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bandsite</title>
     <link rel="stylesheet" href="./styles/bio.css">
+    <script src="./scripts/index-page.js" defer></script>
 </head>
 
 <body>
@@ -75,6 +76,26 @@
                 <img class="photo-gallery__img" src="/assets/images/Photo-gallery-7.jpg" alt="rainbow-confetti">
                 <img class="photo-gallery__img" src="/assets/images/Photo-gallery-8.jpg" alt="purple-dj">
                 <img class="photo-gallery__img" src="/assets/images/Photo-gallery-6.jpg" alt="male-singer">
+            </div>
+        </section>
+
+        <section class="comment-section">
+            <h2 class="comment-section__title">Join the Conversation</h2>
+            <div class="comment-section__layout">
+                <img class="comment-section__avatar" src="./assets/images/Mohan-muruge.jpg" placeholder="" alt="avatar">
+                <form class="comment-section__form" method="post">
+                    <label for="my-name" class="comment-section__header">NAME</label>
+                    <p><input type="text" id="my-name" name="name" class="comment-section__form-box"
+                            placeholder="Enter your name"></p>
+                    <div>
+                        <label class="comment-section__header" for="commentInput">COMMENT</label>
+                        <p><textarea name="comment" id="commentInput" class="comment-section__form-box-2"
+                                placeholder="Add a new comment"></textarea></p>
+                    </div>
+                    <div>
+                        <p><button type="submit" class="comment-section__button">COMMENT</button></p>
+                    </div>
+                </form>
             </div>
         </section>
 

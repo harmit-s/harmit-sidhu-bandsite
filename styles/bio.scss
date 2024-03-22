@@ -36,6 +36,7 @@
         font-family: 'Avenir';
         color: $white;
         padding-left: 1rem;
+        font-weight: 600;
         position: relative;
         z-index: 1;
 
@@ -66,6 +67,7 @@
     &__title {
         font-size: 1.5rem;
         color: $black;
+        font-weight: 600;
         padding-top: 1.5rem;
         padding-bottom: 1rem;
         margin: 0;
@@ -78,19 +80,16 @@
     }
 
     &__img {
-        height: 10rem;
         width: 100%;
 
         @include tablet {
             margin: 0 2.4rem;
-            height: 20rem;
             width: 90%;
         }
 
         @include desktop {
             width: 80%;
             margin: 0 6rem;
-            height: 28rem;
         }
     }
 
@@ -140,6 +139,7 @@
         font-family: 'Avenir';
         margin-top: 1rem;
         margin-bottom: 1rem;
+        font-weight: 600;
 
         @include tablet {
             margin: 3rem 2.4rem 2.25rem 2.4rem;
@@ -171,6 +171,7 @@
         color: $black;
         font-size: .8125rem;
         line-height: 1.125rem;
+        font-weight: 500;
 
         @include tablet {
             font-size: .875rem;
@@ -239,4 +240,95 @@
             margin-bottom: 1rem;
         }
     }
+}
+
+.comment-section {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    &__title {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-family: 'Avenir';
+        margin: 0;
+        padding-bottom: .625rem;
+        color: $black;
+        font-weight: 600;
+    }
+
+    &__layout {
+        display: flex;
+    }
+
+    &__avatar {
+        flex: 1;
+        border-radius: 50%;
+        width: 2.25rem;
+        height: 2.15rem;
+        margin-right: .88rem;
+        margin-top: 1.5rem;
+        &::placeholder {
+            background: $mercury;
+        }
+    }
+
+    &__header {
+        font-size: .625rem;
+        color: $silver;
+        font-weight: 600;
+        line-height: 1.25rem;
+    }
+
+    &__form p {
+        margin: .25rem 0 0 0;
+    }
+
+    &__form {
+        flex: 7;
+    }
+
+    &__form-box {
+        width: 100%;
+        height: 2.25rem;
+        border-radius: 4px;
+        border: 1px solid $mercury;
+        padding: .75rem;
+        background-color: $alabaster;
+        margin-bottom: 1rem;
+        &::placeholder {
+            color: $black;
+            font-size: .75rem;
+            font-family: 'Avenir';
+            font-weight: 500;
+        }
+    }
+
+    &__form-box-2 {
+        width: 100%;
+        height: 5.5rem;
+        border-radius: 4px;
+        border: 1px solid $mercury;
+        padding: .75rem;
+        background-color: $alabaster;
+        &::placeholder {
+            color: $black;
+            font-size: .75rem;
+            font-family: 'Avenir';
+        }
+    }
+
+    &__button {
+        font-size: 1rem;
+        line-height: 1.25rem;
+        font-weight: 500;
+        width: 100%;
+        height: 2.5rem;
+        border-radius: 4px;
+        background: $black;
+        color: $white;
+        border: none;
+        margin-top: .4rem;
+    }
+
 }

@@ -267,7 +267,7 @@
         width: 2.25rem;
         height: 2.15rem;
         margin-right: .88rem;
-        margin-top: 1.5rem;
+        margin-top: 1.7rem;
         &::placeholder {
             background: $mercury;
         }
@@ -280,12 +280,9 @@
         line-height: 1.25rem;
     }
 
-    &__form p {
-        margin: .25rem 0 0 0;
-    }
-
-    &__form {
+    &__form, &__form p {
         flex: 7;
+        margin: .25rem 0 0 0;
     }
 
     &__form-box {

@@ -533,7 +533,7 @@ body {
   width: 2.25rem;
   height: 2.15rem;
   margin-right: 0.88rem;
-  margin-top: 1.5rem;
+  margin-top: 1.7rem;
 }
 .comment-section__avatar::-moz-placeholder {
   background: #E1E1E1;
@@ -547,11 +547,9 @@ body {
   font-weight: 600;
   line-height: 1.25rem;
 }
-.comment-section__form p {
-  margin: 0.25rem 0 0 0;
-}
-.comment-section__form {
+.comment-section__form, .comment-section__form p {
   flex: 7;
+  margin: 0.25rem 0 0 0;
 }
 .comment-section__form-box {
   width: 100%;

@@ -259,15 +259,17 @@
 
     &__layout {
         display: flex;
+        border-bottom: 1px solid $mercury;
     }
 
     &__avatar {
-        flex: 1;
         border-radius: 50%;
         width: 2.25rem;
-        height: 2.15rem;
+        height: 2.25rem;
         margin-right: .88rem;
         margin-top: 1.7rem;
+        object-fit: cover;
+        object-position: center;
         &::placeholder {
             background: $mercury;
         }
@@ -326,6 +328,53 @@
         color: $white;
         border: none;
         margin-top: .4rem;
+        margin-bottom: 1rem;
+
     }
 
+    &__comments-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__com-display {
+        border-bottom: 1px solid $mercury;
+        position: relative;
+        display: flex;
+    }
+
+    &__com-avatar {
+        border-radius: 50%;
+        width: 2.25rem;
+        height: 2.25rem;
+        margin-right: .88rem;
+        margin-top: .8rem;
+        background: $mercury;
+    }
+
+    &__com-layout {
+        flex: 1;
+    }
+
+    &__com-title {
+        font-size: 1rem;
+        color: $black;
+        font-weight: 600;
+    }
+
+    &__com-para {
+        font-size: .95rem;
+        color: $black;
+        font-weight: 500;
+        line-height: 1.125rem;
+    }
+
+    &__com-time {
+        font-size: .95rem;
+        color: $silver;
+        position: absolute;
+        top:0;
+        right:0
+    }
 }
+

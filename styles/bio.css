@@ -526,14 +526,18 @@ body {
 }
 .comment-section__layout {
   display: flex;
+  border-bottom: 1px solid #E1E1E1;
 }
 .comment-section__avatar {
-  flex: 1;
   border-radius: 50%;
   width: 2.25rem;
-  height: 2.15rem;
+  height: 2.25rem;
   margin-right: 0.88rem;
   margin-top: 1.7rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 .comment-section__avatar::-moz-placeholder {
   background: #E1E1E1;
@@ -601,4 +605,43 @@ body {
   color: #FFFFFF;
   border: none;
   margin-top: 0.4rem;
+  margin-bottom: 1rem;
+}
+.comment-section__comments-container {
+  display: flex;
+  flex-direction: column;
+}
+.comment-section__com-display {
+  border-bottom: 1px solid #E1E1E1;
+  position: relative;
+  display: flex;
+}
+.comment-section__com-avatar {
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-right: 0.88rem;
+  margin-top: 0.8rem;
+  background: #E1E1E1;
+}
+.comment-section__com-layout {
+  flex: 1;
+}
+.comment-section__com-title {
+  font-size: 1rem;
+  color: #323232;
+  font-weight: 600;
+}
+.comment-section__com-para {
+  font-size: 0.95rem;
+  color: #323232;
+  font-weight: 500;
+  line-height: 1.125rem;
+}
+.comment-section__com-time {
+  font-size: 0.95rem;
+  color: #AFAFAF;
+  position: absolute;
+  top: 0;
+  right: 0;
 }/*# sourceMappingURL=bio.css.map */

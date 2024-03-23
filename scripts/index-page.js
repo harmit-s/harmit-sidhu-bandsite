@@ -12,6 +12,12 @@ const displayComments = () => {
         const commentsParent = document.createElement("div");
         commentsParent.className = 'comment-section__com-display';
 
+        const commentImg = document.createElement("div");
+        commentImg.className = 'comment-section__com-avatar';
+
+        const commentlayout = document.createElement("div");
+        commentlayout.className = 'comment-section__com-layout';
+
         const commentUser = document.createElement("h3");
         commentUser.className = 'comment-section__com-title';
         commentUser.innerText = comment.name;
@@ -24,9 +30,12 @@ const displayComments = () => {
         commentDate.className = 'comment-section__com-time';
         commentDate.innerText = comment.timestamp;
 
-        commentsParent.appendChild(commentUser);
-        commentsParent.appendChild(commentBody);
-        commentsParent.appendChild(commentDate);
+        commentsParent.appendChild(commentImg);
+        commentsParent.appendChild(commentlayout);
+
+        commentlayout.appendChild(commentUser);
+        commentlayout.appendChild(commentBody);
+        commentlayout.appendChild(commentDate);
 
         commentContainer.appendChild(commentsParent);
     });

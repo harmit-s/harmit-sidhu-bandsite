@@ -24,7 +24,7 @@
     }
 
     @include tablet {
-        height: 24rem;
+        height: 26rem;
     }
 
     @include desktop {
@@ -247,6 +247,14 @@
     flex-direction: column;
     padding: 1rem;
 
+    @include tablet {
+        padding: 2.25rem;
+    }
+
+    @include desktop {
+        padding: 3rem 6rem;
+    }
+
     &__title {
         font-size: 1.5rem;
         line-height: 2rem;
@@ -255,11 +263,27 @@
         padding-bottom: .625rem;
         color: $black;
         font-weight: 600;
+
+        @include tablet {
+            padding-bottom: 1.25rem;
+            font-size: 2.25rem;
+        }
+        @include desktop {
+            padding-bottom: 2.5rem;
+        }
     }
 
     &__layout {
         display: flex;
         border-bottom: 1px solid $mercury;
+        @include tablet {
+            margin: 0 2.4rem;
+            border-bottom: 2px solid $mercury;
+        }
+        @include desktop {
+            width: 55%;
+            margin: auto;
+        }
     }
 
     &__avatar {
@@ -270,8 +294,9 @@
         margin-top: 1.7rem;
         object-fit: cover;
         object-position: center;
-        &::placeholder {
-            background: $mercury;
+        @include tablet {
+            width: 3rem;
+            height: 3rem;
         }
     }
 
@@ -280,11 +305,18 @@
         color: $silver;
         font-weight: 600;
         line-height: 1.25rem;
+        @include tablet {
+            font-size: .75rem;
+            line-height: 1.25rem;
+        }
     }
 
     &__form, &__form p {
         flex: 7;
         margin: .25rem 0 0 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
     }
 
     &__form-box {
@@ -300,6 +332,19 @@
             font-size: .75rem;
             font-family: 'Avenir';
             font-weight: 500;
+            @include tablet {
+                font-size: .875rem;
+            }
+        &:active {
+            border: 1px solid $pitchBlack;
+        }
+        &:invalid {
+            border: 1px solid $error;
+        }
+        }
+        @include tablet {
+            height: 3rem;
+            margin-bottom: 1.45rem;
         }
     }
 
@@ -314,9 +359,15 @@
             color: $black;
             font-size: .75rem;
             font-family: 'Avenir';
+            @include tablet {
+                font-size: .875rem;
+            }
         }
-    }
-
+        @include tablet {
+            height: 6rem;
+        }
+        }
+    
     &__button {
         font-size: 1rem;
         line-height: 1.25rem;
@@ -329,18 +380,38 @@
         border: none;
         margin-top: .4rem;
         margin-bottom: 1rem;
-
+        &:hover {
+            background: $pitchBlack;
+        }
+        @include tablet {
+            width: 9.375rem;
+            padding: 0 2rem;
+            margin-left:auto;
+            margin-bottom: 1.55rem;
+            margin-top: 1.35rem;
+        }
     }
 
     &__comments-container {
         display: flex;
         flex-direction: column;
+        @include tablet {
+            margin: 0 2.4rem;
+        }
+        @include desktop {
+            margin: auto;
+            width: 55%;
+        }
     }
 
     &__com-display {
         border-bottom: 1px solid $mercury;
         position: relative;
         display: flex;
+        @include tablet {
+            padding: .8rem 0;
+            border-bottom: 2px solid $mercury;
+        }
     }
 
     &__com-avatar {
@@ -350,6 +421,10 @@
         margin-right: .88rem;
         margin-top: .8rem;
         background: $mercury;
+        @include tablet {
+            width: 3rem;
+            height: 3rem;
+        }
     }
 
     &__com-layout {
@@ -360,6 +435,12 @@
         font-size: 1rem;
         color: $black;
         font-weight: 600;
+        @include tablet {
+            line-height: 1.375rem ;
+        }
+        @include desktop {
+            font-size: 1.07rem;
+        }
     }
 
     &__com-para {
@@ -367,14 +448,23 @@
         color: $black;
         font-weight: 500;
         line-height: 1.125rem;
+        @include tablet {
+            line-height: 1.375rem ;
+        }
+        @include desktop {
+            font-size: 1.07rem;
+        }
     }
 
     &__com-time {
         font-size: .95rem;
         color: $silver;
         position: absolute;
-        top:0;
-        right:0
+        top: 0;
+        right:0;
+        @include tablet {
+            top: 15px;
+        }
     }
 }
 

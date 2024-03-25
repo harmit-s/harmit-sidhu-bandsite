@@ -4,7 +4,7 @@
 @use '../styles/partials/fonts' as *;
 
 .hero-section {
-    height: 17rem;
+    height: 18rem;
     background: url(../assets/images/hero-shows.jpg);
     background-position: center;
     background-size: cover;
@@ -39,7 +39,7 @@
         font-family: 'Avenir';
         font-weight: 400;
         margin-left: 1rem;
-        margin-top: 2rem;
+        margin-top: 2.2rem;
     }
 
     &__subtitle {
@@ -54,8 +54,65 @@
     }
 
     &__iframe {
-        margin: 0 1rem;
-        width: 69%;
+        width: 88%;
+        margin: auto;
         height: 6rem;
+        overflow: hidden;
+        margin-top: 0;
+    }
+}
+
+.shows-section {
+    margin: 1rem 0;
+    background: $white;
+
+    &__layout {
+        padding: 1rem;
+        border-bottom: 1.5px solid $mercury;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        color: $black;
+        font-weight: 600;
+        padding: 1rem 0 .5rem 1rem;
+        line-height: 2rem;
+        margin: 0;
+    }
+
+    &__header {
+        color: $silver;
+        font-size: .6875rem;
+        line-height: 22px;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    &__header-date {
+        font-size: .875rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        margin-top: 0.25rem;
+    }
+
+    &__header-input {
+        font-size: .875rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        margin-top: 0.25rem;
+    }
+
+    &__button {
+        width:100%;
+        background: $black;
+        border: none;
+        height: 2.5rem;
+        border-radius: 4px;
+        color: $white;
+        font-weight: 500;
+        font-size: .875rem;
+        margin-top: .30rem;
     }
 }

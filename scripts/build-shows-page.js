@@ -16,69 +16,76 @@ const showsList = () => {
     showsTitle.innerText = 'Shows';
     showsContainer.appendChild(showsTitle);
 
-    showsArr.forEach(show => {
-        //const showsParent = document.createElement("div");
-        //showsParent.className = 'shows-section__container';
+    let isFirstIteration = true; 
 
+    showsArr.forEach(show => {
         const showsLayout = document.createElement("div");
         showsLayout.className = 'shows-section__layout';
 
+        const headerContainer = document.createElement("div");
+        headerContainer.className = 'shows-section__header-container';
+
         const showsDate = document.createElement("h2");
-        showsDate.className = 'shows-section__header'
+        showsDate.className = 'shows-section__header-date';
         showsDate.innerText = 'DATE';
 
         const showsDateInput = document.createElement("p");
-        showsDateInput.className = 'shows-section__header-date';
+        showsDateInput.className = 'shows-section__header-input';
         showsDateInput.innerText = show.date;
 
         const showsVenue = document.createElement("h2");
-        showsVenue.className = 'shows-section__header';
+        showsVenue.className = 'shows-section__header-venue';
         showsVenue.innerText = 'VENUE';
 
         const showsVenueInput = document.createElement("p");
-        showsVenueInput.className = 'shows-section__header-input';
+        showsVenueInput.className = 'shows-section__header';
         showsVenueInput.innerText = show.venue;
 
         const showsLocation = document.createElement("h2");
-        showsLocation.className = 'shows-section__header';
+        showsLocation.className = 'shows-section__header-location';
         showsLocation.innerText = 'LOCATION';
 
         const showsLocationInput = document.createElement("p");
-        showsLocationInput.className = 'shows-section__header-input';
+        showsLocationInput.className = 'shows-section__header';
         showsLocationInput.innerText = show.location;
 
         const showsButton = document.createElement("button");
         showsButton.className = 'shows-section__button';
         showsButton.innerText = 'BUY TICKETS';
 
-        //showsParent.appendChild(showsLayout);
-
-        showsLayout.appendChild(showsDate);
-        showsLayout.appendChild(showsDateInput);
-        showsLayout.appendChild(showsVenue);
-        showsLayout.appendChild(showsVenueInput);
-        showsLayout.appendChild(showsLocation);
-        showsLayout.appendChild(showsLocationInput);
+        headerContainer.appendChild(showsDate);
+        headerContainer.appendChild(showsDateInput);
+        headerContainer.appendChild(showsVenue);
+        headerContainer.appendChild(showsVenueInput);
+        headerContainer.appendChild(showsLocation);
+        headerContainer.appendChild(showsLocationInput);
+        showsLayout.appendChild(headerContainer);
         showsLayout.appendChild(showsButton);
 
         showsContainer.appendChild(showsLayout);
+
+        if (isFirstIteration) {
+            isFirstIteration = false;
+        } else {
+            
+            showsDate.classList.add('not-first-child');
+            showsVenue.classList.add('not-first-child');
+            showsLocation.classList.add('not-first-child');
+        }
     });
 }
 
 showsList();
 
-document.addEventListener('DOMContentLoaded', function() {
-    const showItems = document.querySelectorAll('.shows-section__container');
-  
-    showItems.forEach(item => {
-      item.addEventListener('click', function() {
-        
+const showItems = document.querySelectorAll('.shows-section__container');
+
+showItems.forEach(item => {
+    item.addEventListener('click', function () {
         showItems.forEach(item => {
-          item.classList.remove('selected');
+            item.classList.remove('shows-section__layout--selected');
         });
-        
-        this.classList.add('selected');
-      });
+
+        this.classList.add('shows-section__layout--selected');
     });
-  });
+});
 

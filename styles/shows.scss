@@ -28,7 +28,7 @@
     }
 
     @include desktop {
-        height: 36rem;
+        height: 42rem;
     }
 
     &__title {
@@ -38,8 +38,14 @@
         z-index: 1;
         font-family: 'Avenir';
         font-weight: 400;
-        margin-left: 1rem;
+        padding-left: 1rem;
         margin-top: 2.2rem;
+        @include tablet {
+            padding-left: 2.25rem;
+            font-size: 24px;
+            margin-top: 3.5rem;
+            font-weight: 500;
+        }
     }
 
     &__subtitle {
@@ -48,9 +54,16 @@
         color: $white;
         z-index: 1;
         font-weight: 600;
-        margin-left: 1rem;
+        padding-left: 1rem;
         margin-top: 0;
         width: 70%;
+        @include tablet {
+            padding-left: 2.25rem;
+            font-size: 3.75rem;
+            line-height: 4.25rem;
+            width: 80%;
+            font-weight: 600;
+        }
     }
 
     &__iframe {
@@ -59,18 +72,41 @@
         height: 6rem;
         overflow: hidden;
         margin-top: 0;
+        z-index: 1;
+        @include tablet {
+            width: 55%;
+            margin-left: 2.25rem;
+            height: 8.5rem;
+        }
     }
 }
 
 .shows-section {
     margin: 1rem 0;
     background: $white;
+    @include tablet {
+        margin: 2rem 0;
+    }
 
     &__layout {
         padding: 1rem;
         border-bottom: 1.5px solid $mercury;
         display: flex;
         flex-direction: column;
+
+        &--selected {
+            background: $mercury;
+        }
+
+        &:hover {
+            background: $alabaster;
+        }
+        @include tablet {
+            flex-direction: row;
+            padding: 1.5rem 1.125rem;
+            margin: 0 1.125rem;
+            justify-content: space-between;
+        }
     }
 
     &__title {
@@ -80,9 +116,14 @@
         padding: 1rem 0 .5rem 1rem;
         line-height: 2rem;
         margin: 0;
+        @include tablet {
+            padding: 1rem 0 1rem 2.25rem;
+            font-size: 2.25rem;
+            line-height: 2.75rem;
+        }
     }
 
-    &__header {
+    &__header-date, &__header-venue, &__header-location {
         color: $silver;
         font-size: .6875rem;
         line-height: 22px;
@@ -90,18 +131,34 @@
         font-weight: 600;
     }
 
-    &__header-date {
-        font-size: .875rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        margin-top: 0.25rem;
+    &__header-container {
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+        flex-direction: row;
+        gap: 5rem;
+        }
     }
 
     &__header-input {
         font-size: .875rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        margin-top: 0.25rem;
+        }
+    
+
+    &__header {
+        font-size: .875rem;
         font-weight: 500;
         margin-bottom: 1rem;
         margin-top: 0.25rem;
+    }
+
+    &__header-date.not-first-child, &__header-venue.not-first-child, &__header-location.not-first-child {
+        @include tablet {
+            display: none;
+        }
     }
 
     &__button {
@@ -114,5 +171,14 @@
         font-weight: 500;
         font-size: .875rem;
         margin-top: .30rem;
+        &:hover {
+            background: $pitchBlack;
+        }
+        @include tablet {
+            padding: 0 2rem;
+            width: 9.375rem;
+            font-size: .8125rem;
+            font-weight: 500;
+        }
     }
 }

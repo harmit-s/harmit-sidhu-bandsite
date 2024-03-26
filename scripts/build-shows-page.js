@@ -78,14 +78,13 @@ const showsList = () => {
 
 showsList();
 
-const showItems = document.querySelectorAll('.shows-section__container');
+const showItems = document.querySelectorAll('.shows-section__layout');
 
 showItems.forEach(item => {
     item.addEventListener('click', function () {
         showItems.forEach(item => {
             item.classList.remove('shows-section__layout--selected');
         });
-
         this.classList.add('shows-section__layout--selected');
     });
 });

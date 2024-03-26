@@ -1,5 +1,5 @@
 let showsArr = [
-    { date: "Mon Sept 09 2024", venue: "Ronald Lane", location: "San Francisco, CA" },
+    { date: "Mon Sept 09 2024", venue: "Ronald Lane", location: "San Francisco, CA"},
     { date: "Tue Sept 17 2024", venue: "Pier 3 East", location: "San Francisco, CA" },
     { date: "Sat Oct 12 2024", venue: "View Lounge", location: "San Francisco, CA" },
     { date: "Sat Nov 16 2024", venue: "Hyatt Agency", location: "San Francisco, CA" },
@@ -16,7 +16,16 @@ const showsList = () => {
     showsTitle.innerText = 'Shows';
     showsContainer.appendChild(showsTitle);
 
-    let isFirstIteration = true; 
+    const labels = ["DATE", "VENUE", "LOCATION"];
+    const labelContainer = document.createElement("div");
+    labelContainer.className = "shows-section__labels-container";
+    labels.forEach(labelText => {
+        const label = document.createElement("span");
+        label.innerText = labelText;
+        labelContainer.appendChild(label);
+    });
+    showsContainer.appendChild(labelContainer);
+
 
     showsArr.forEach(show => {
         const showsLayout = document.createElement("div");
@@ -64,14 +73,6 @@ const showsList = () => {
 
         showsContainer.appendChild(showsLayout);
 
-        if (isFirstIteration) {
-            isFirstIteration = false;
-        } else {
-            
-            showsDate.classList.add('not-first-child');
-            showsVenue.classList.add('not-first-child');
-            showsLocation.classList.add('not-first-child');
-        }
     });
 }
 

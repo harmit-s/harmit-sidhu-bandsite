@@ -44,7 +44,7 @@
             padding-left: 2.25rem;
             font-size: 24px;
             margin-top: 3.5rem;
-            font-weight: 500;
+            font-weight: 600;
         }
     }
 
@@ -103,9 +103,10 @@
         }
         @include tablet {
             flex-direction: row;
-            padding: 1.5rem 1.125rem;
+            padding: 1.0625rem 1.125rem;
             margin: 0 1.125rem;
             justify-content: space-between;
+            align-items: center;
         }
     }
 
@@ -129,15 +130,19 @@
         line-height: 22px;
         margin: 0;
         font-weight: 600;
+        @include tablet {
+            display: none;
+        }
     }
 
     &__header-container {
         display: flex;
         flex-direction: column;
         @include tablet {
-        flex-direction: row;
-        gap: 5rem;
-        }
+            flex-direction: row;
+            width: 70%;
+            justify-content: space-between;
+            }
     }
 
     &__header-input {
@@ -145,7 +150,10 @@
         font-weight: 600;
         margin-bottom: 1rem;
         margin-top: 0.25rem;
+        @include tablet {
+            margin: 0;
         }
+    }
     
 
     &__header {
@@ -153,11 +161,27 @@
         font-weight: 500;
         margin-bottom: 1rem;
         margin-top: 0.25rem;
+        @include tablet {
+            margin: 0;
+        }
     }
 
-    &__header-date.not-first-child, &__header-venue.not-first-child, &__header-location.not-first-child {
-        @include tablet {
+    &__labels-container {
+        @include mobile {
             display: none;
+        }
+        @include tablet {
+        display: flex;
+        color: $silver;
+        font-size: .75rem;
+        line-height: 22px;
+        margin: 0;
+        font-weight: 600;
+        padding: 1rem 0 .5rem 2.25rem;
+        gap: 8.1rem;
+        & :nth-child(2) {
+            padding-left: 2.9rem;
+        }
         }
     }
 
@@ -179,6 +203,8 @@
             width: 9.375rem;
             font-size: .8125rem;
             font-weight: 500;
+            margin: 0;
         }
     }
 }
+

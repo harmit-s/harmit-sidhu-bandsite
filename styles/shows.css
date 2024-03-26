@@ -296,7 +296,7 @@ body {
     padding-left: 2.25rem;
     font-size: 24px;
     margin-top: 3.5rem;
-    font-weight: 500;
+    font-weight: 600;
   }
 }
 .hero-section__subtitle {
@@ -358,9 +358,10 @@ body {
 @media (min-width: 768px) {
   .shows-section__layout {
     flex-direction: row;
-    padding: 1.5rem 1.125rem;
+    padding: 1.0625rem 1.125rem;
     margin: 0 1.125rem;
     justify-content: space-between;
+    align-items: center;
   }
 }
 .shows-section__title {
@@ -385,6 +386,11 @@ body {
   margin: 0;
   font-weight: 600;
 }
+@media (min-width: 768px) {
+  .shows-section__header-date, .shows-section__header-venue, .shows-section__header-location {
+    display: none;
+  }
+}
 .shows-section__header-container {
   display: flex;
   flex-direction: column;
@@ -392,7 +398,8 @@ body {
 @media (min-width: 768px) {
   .shows-section__header-container {
     flex-direction: row;
-    gap: 5rem;
+    width: 70%;
+    justify-content: space-between;
   }
 }
 .shows-section__header-input {
@@ -401,6 +408,11 @@ body {
   margin-bottom: 1rem;
   margin-top: 0.25rem;
 }
+@media (min-width: 768px) {
+  .shows-section__header-input {
+    margin: 0;
+  }
+}
 .shows-section__header {
   font-size: 0.875rem;
   font-weight: 500;
@@ -408,8 +420,28 @@ body {
   margin-top: 0.25rem;
 }
 @media (min-width: 768px) {
-  .shows-section__header-date.not-first-child, .shows-section__header-venue.not-first-child, .shows-section__header-location.not-first-child {
+  .shows-section__header {
+    margin: 0;
+  }
+}
+@media (min-width: 320px) {
+  .shows-section__labels-container {
     display: none;
+  }
+}
+@media (min-width: 768px) {
+  .shows-section__labels-container {
+    display: flex;
+    color: #AFAFAF;
+    font-size: 0.75rem;
+    line-height: 22px;
+    margin: 0;
+    font-weight: 600;
+    padding: 1rem 0 0.5rem 2.25rem;
+    gap: 8.1rem;
+  }
+  .shows-section__labels-container :nth-child(2) {
+    padding-left: 2.9rem;
   }
 }
 .shows-section__button {
@@ -432,5 +464,6 @@ body {
     width: 9.375rem;
     font-size: 0.8125rem;
     font-weight: 500;
+    margin: 0;
   }
 }/*# sourceMappingURL=shows.css.map */

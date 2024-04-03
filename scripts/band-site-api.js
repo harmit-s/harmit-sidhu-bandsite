@@ -1,4 +1,3 @@
-
 class BandSiteApi {
     constructor(apiKey) {
         this.apiKey = apiKey;
@@ -21,7 +20,7 @@ class BandSiteApi {
             if (response.status !== 200) {
                 throw new Error('Failed to fetch comments');
             }
-            const sortComments = response.data.comments.sort((a, b) => b.timestamp - a.timestamp);
+            const sortComments = response.data.sort((a, b) => b.timestamp - a.timestamp);
             return sortComments;
         } catch (error) {
             console.error('Error fetching comments:', error.message);
@@ -31,7 +30,12 @@ class BandSiteApi {
 
     async postComment(comment) {
         try {
-            const response = await axios.post(`${this.baseUrl}/comments?api_key=${this.apiKey}`, comment);
+            const { name, comment: commentText } = comment;
+            const postData = {
+                name: name,
+                comment: commentText
+            };
+            const response = await axios.post(`${this.baseUrl}/comments?api_key=${this.apiKey}`, postData);
             if (response.status !== 201) {
                 throw new Error('Failed to post comment');
             }
@@ -45,8 +49,3 @@ class BandSiteApi {
 
 export default BandSiteApi;
 
-
-// const apiKey = 'dde133e3-5a0a-4210-8cf9-0618e78dea51';
-// const bandSiteApi = new BandSiteApi(apiKey);
-// const comments = await bandSiteApi.getComments();
-// console.log(comments);

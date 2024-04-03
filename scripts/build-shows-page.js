@@ -14,7 +14,7 @@ const showsList = (shows) => {
     const showsContainer = document.getElementById("shows");
     showsContainer.innerHTML = '';
 
-    const showsTitle = document.createElement("h1");
+    const showsTitle = document.createElement("h3");
     showsTitle.className = 'shows-section__title';
     showsTitle.innerText = 'Shows';
     showsContainer.appendChild(showsTitle);

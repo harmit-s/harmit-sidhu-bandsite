@@ -48,4 +48,3 @@ class BandSiteApi {
 }
 
 export default BandSiteApi;
-

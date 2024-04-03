@@ -1,14 +1,35 @@
-let commentArr = [
-    { name: "Victor Pinto", timestamp: "11/02/2023", comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains." },
-    { name: "Christina Cabrera", timestamp: "10/28/2023", comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day." },
-    { name: "Isaac Tadesse", timestamp: "10/20/2023", comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can t get enough." }
-];
+import BandSiteApi from './band-site-api.js';
 
-const displayComments = () => {
+const apiKey = 'dde133e3-5a0a-4210-8cf9-0618e78dea51';
+const bandSiteApi = new BandSiteApi(apiKey);
+
+bandSiteApi.getComments()
+    .then(comments => {
+        displayComments(comments);
+    })
+    .catch(error => {
+        console.error('Error:', error.message);
+    });
+
+const newComment = {
+    name: "Your Name",
+    timestamp: new Date().toLocaleDateString(),
+    comment: "Your comment goes here"
+};
+
+bandSiteApi.postComment(newComment)
+    .then(response => {
+        console.log('Comment posted successfully:', response);
+    })
+    .catch(error => {
+        console.error('Error posting comment:', error.message);
+    });
+
+const displayComments = (comments) => {
     const commentContainer = document.getElementById("commentContainer");
-    commentContainer.innerHTML = ""; 
+    commentContainer.innerHTML = "";
 
-    commentArr.forEach(comment => {
+    comments.forEach(comment => {
         const commentsParent = document.createElement("div");
         commentsParent.className = 'comment-section__com-display';
 
@@ -63,4 +84,3 @@ function addItem(e) {
 
 document.getElementById("addForm").addEventListener("submit", addItem);
 
-displayComments();

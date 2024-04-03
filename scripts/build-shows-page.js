@@ -1,15 +1,18 @@
-let showsArr = [
-    { date: "Mon Sept 09 2024", venue: "Ronald Lane", location: "San Francisco, CA"},
-    { date: "Tue Sept 17 2024", venue: "Pier 3 East", location: "San Francisco, CA" },
-    { date: "Sat Oct 12 2024", venue: "View Lounge", location: "San Francisco, CA" },
-    { date: "Sat Nov 16 2024", venue: "Hyatt Agency", location: "San Francisco, CA" },
-    { date: "Fri Nov 29 2024", venue: "Moscow Center", location: "San Francisco, CA" },
-    { date: "Wed Dec 18 2024", venue: "Press Club", location: "San Francisco, CA" }
-];
+import BandSiteApi from './band-site-api.js';
 
+const apiKey = 'dde133e3-5a0a-4210-8cf9-0618e78dea51';
+const bandSiteApi = new BandSiteApi(apiKey);
+bandSiteApi.getShows()
+    .then(shows => {
+        showsList(shows);
+    })
+    .catch(error => {
+        console.error('Error:', error.message);
+    });
 
-const showsList = () => {
+const showsList = (shows) => {
     const showsContainer = document.getElementById("shows");
+    showsContainer.innerHTML = '';
 
     const showsTitle = document.createElement("h1");
     showsTitle.className = 'shows-section__title';
@@ -26,8 +29,7 @@ const showsList = () => {
     });
     showsContainer.appendChild(labelContainer);
 
-
-    showsArr.forEach(show => {
+    shows.forEach(show => {
         const showsLayout = document.createElement("div");
         showsLayout.className = 'shows-section__layout';
 
@@ -40,7 +42,7 @@ const showsList = () => {
 
         const showsDateInput = document.createElement("p");
         showsDateInput.className = 'shows-section__header-input';
-        showsDateInput.innerText = show.date;
+        showsDateInput.innerText = new Date(show.date).toDateString(); 
 
         const showsVenue = document.createElement("h2");
         showsVenue.className = 'shows-section__header-venue';
@@ -48,7 +50,7 @@ const showsList = () => {
 
         const showsVenueInput = document.createElement("p");
         showsVenueInput.className = 'shows-section__header';
-        showsVenueInput.innerText = show.venue;
+        showsVenueInput.innerText = show.place; 
 
         const showsLocation = document.createElement("h2");
         showsLocation.className = 'shows-section__header-location';
@@ -72,11 +74,8 @@ const showsList = () => {
         showsLayout.appendChild(showsButton);
 
         showsContainer.appendChild(showsLayout);
-
     });
 }
-
-showsList();
 
 const showItems = document.querySelectorAll('.shows-section__layout');
 
@@ -88,4 +87,3 @@ showItems.forEach(item => {
         this.classList.add('shows-section__layout--selected');
     });
 });
-
